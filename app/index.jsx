@@ -1,6 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { ImageBackground } from 'react-native-web';
+import { Link } from 'expo-router';
+import usermanager from './usermanager';
+import { ImageBackground } from 'react-native-web';
 
 
 export default function App() {
@@ -12,6 +15,7 @@ export default function App() {
         <Text style={styles.text}>webshopunkban!</Text>
       </ImageBackground>
     </View>
+    
   );
 }
 
