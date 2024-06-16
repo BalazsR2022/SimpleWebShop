@@ -1,6 +1,8 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import {Slot} from 'expo-router';
+import { Slot, Link } from 'expo-router';
+import { StatusBar } from 'react-native-web';
+import 'expo-router'; 
 
 const shopping = () => {
   return (
@@ -9,7 +11,13 @@ const shopping = () => {
         <Text style={styles.text}>Termék</Text>
         <Text style={styles.text}>Termék</Text>
         <Text style={styles.text}>Termék</Text>
-      </ImageBackground>
+        </ImageBackground>
+        <View>
+        <StatusBar style="auto"/>
+        <Link href="/delivery" style={{color: 'blue'}}>Go to Delivery</Link>
+        </View>
+        
+      
     </View>
   )
 }
