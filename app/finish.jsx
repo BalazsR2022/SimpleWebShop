@@ -1,7 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { Buttong } from 'react-native-web'
-import {Slot} from 'expo-router';
 import { ImageBackground } from 'react-native-web';
 
 const finish = () => {
