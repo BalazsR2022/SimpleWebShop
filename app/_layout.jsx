@@ -1,13 +1,12 @@
-// _layout.jsx
-
 import React from 'react';
 import { StyleSheet, Text, View, ImageBackground, StatusBar, TouchableOpacity } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { FontAwesome, MaterialIcons } from '@expo/vector-icons';
-import { Link } from 'expo-router';
+import { useNavigation } from '@react-navigation/native';
 import { useMediaQuery } from 'react-responsive';
 
-const RootLayout = ({ navigation }) => {
+const RootLayout = () => {
+  const navigation = useNavigation();
   const isSmallScreen = useMediaQuery({ maxWidth: 600 });
 
   return (
@@ -28,7 +27,24 @@ const RootLayout = ({ navigation }) => {
           </View>
         </ImageBackground>
         <View style={styles.footer}>
-          <Link href="/delivery" style={styles.link}>Go to Delivery</Link>
+          <TouchableOpacity onPress={() => navigation.navigate('Delivers')} style={styles.link}>
+            <Text style={styles.linkText}>Go to Delivers</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Finish')} style={styles.link}>
+            <Text style={styles.linkText}>Go to Finish</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.link}>
+            <Text style={styles.linkText}>Go to Home</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Shopping')} style={styles.link}>
+            <Text style={styles.linkText}>Go to Shopping</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('UserManager')} style={styles.link}>
+            <Text style={styles.linkText}>Go to UserManager</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Index')} style={styles.link}>
+            <Text style={styles.linkText}>Go to Index</Text>
+          </TouchableOpacity>
         </View>
         <StatusBar style="auto" />
       </SafeAreaView>
@@ -91,6 +107,9 @@ const styles = StyleSheet.create({
     right: 0,
   },
   link: {
+    marginVertical: 5,
+  },
+  linkText: {
     color: 'blue',
   },
   icon: {
